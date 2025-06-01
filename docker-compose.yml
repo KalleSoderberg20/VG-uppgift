@@ -12,11 +12,22 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    # Ta bort eller definiera volymer om de behövs:
+    # volumes:
+    #   - .:/app
+
 volumes:
   pgdata:
-
-
-  
-
-
-
