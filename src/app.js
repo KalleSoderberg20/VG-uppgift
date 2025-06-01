@@ -3,8 +3,10 @@ Importerar moduler
 */
 const express = require('express');
 const sequelize = require('./db.js');
-require('./models/user.js');
+const User = require('./models/user.js');
 require('./models/accomodation.js');
+
+
 
 /*
 Skapar Express-appen
